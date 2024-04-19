@@ -53,13 +53,13 @@ const getApiConfig = () => {
     apiKey = process.env.AZURE_OPENAI_API_KEY || ''
     model = '' // Azure Open AI always ignores the model and decides based on the deployment name passed through.
   } else {
-    let apiBaseUrl = process.env.OPENAI_API_BASE_URL || 'https://api.openai.com'
+    let apiBaseUrl = process.env.GROQ_API_BASE_URL || 'https://api.groq.com/openai/v1'
     if (apiBaseUrl && apiBaseUrl.endsWith('/')) {
       apiBaseUrl = apiBaseUrl.slice(0, -1)
     }
     apiUrl = `${apiBaseUrl}/v1/chat/completions`
-    apiKey = process.env.OPENAI_API_KEY || ''
-    model = process.env.OPENAI_MODEL || 'gpt-3.5-turbo'
+    apiKey = process.env.GROQ_API_KEY || ''
+    model = process.env.GROQ_MODEL || 'llama3-8b-8192'
   }
 
   return { apiUrl, apiKey, model }
@@ -83,7 +83,7 @@ const getOpenAIStream = async (
     body: JSON.stringify({
       model: model,
       frequency_penalty: 0,
-      max_tokens: 2000,
+      max_tokens: 8000,
       messages: messages,
       presence_penalty: 0,
       stream: true,
@@ -95,9 +95,9 @@ const getOpenAIStream = async (
   if (res.status !== 200) {
     const statusText = res.statusText
     const responseBody = await res.text()
-    console.error(`OpenAI API response error: ${responseBody}`)
+    console.error(`API response error: ${responseBody}`)
     throw new Error(
-      `The OpenAI API has encountered an error with a status code of ${res.status} ${statusText}: ${responseBody}`
+      `The OrionAI API has encountered an error with a status code of ${res.status} ${statusText}: ${responseBody}`
     )
   }
 

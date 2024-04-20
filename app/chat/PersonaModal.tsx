@@ -21,6 +21,9 @@ const PersonaModal = () => {
     if (detail) {
       setValue('name', detail.name, { shouldTouch: true })
       setValue('prompt', detail.prompt, { shouldTouch: true })
+    } else {
+      // Set the default prompt to Juno's prompt when creating a new persona
+      setValue('prompt', "You are OrionAI's chatbot called Juno", { shouldTouch: true })
     }
   }, [detail, setValue])
 

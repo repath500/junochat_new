@@ -52,12 +52,9 @@ const getApiConfig = () => {
     apiUrl = `${apiBaseUrl}/openai/deployments/${deployment}/chat/completions?api-version=${apiVersion}`
     apiKey = process.env.AZURE_OPENAI_API_KEY || ''
     model = '' // Azure Open AI always ignores the model and decides based on the deployment name passed through.
-  }  else {
-    let apiBaseUrl = process.env.GROQ_API_BASE_URL || 'https://api.groq.com'
-    if (apiBaseUrl && apiBaseUrl.endsWith('/')) {
-      apiBaseUrl = apiBaseUrl.slice(0, -1)
-    }
-    apiUrl = `${apiBaseUrl}/v1/chat/completions`
+  } else {
+    const apiBaseUrl = 'https://api.groq.com/openai/v1'
+    apiUrl = `${apiBaseUrl}/chat/completions`
     apiKey = process.env.GROQ_API_KEY || ''
     model = process.env.GROQ_MODEL || 'llama3-8b-8192'
   }

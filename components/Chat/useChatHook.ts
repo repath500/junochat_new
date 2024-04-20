@@ -15,7 +15,6 @@ export const DefaultPersonas: Persona[] = [
     name: 'Juno',
     prompt: 'You are an AI assistant designed to be helpful designed by OrionAi Lab's',
     isDefault: true
-    isVisible: false
   },
 ]
 

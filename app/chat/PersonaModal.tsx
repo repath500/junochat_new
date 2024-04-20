@@ -28,30 +28,32 @@ const PersonaModal = () => {
   }, [detail, setValue])
 
   return (
-    <Dialog.Root open={open!}>
+    <Dialog.Root open={open}>
       <Dialog.Content size="4">
         <Dialog.Title>Persona Details</Dialog.Title>
         <Dialog.Description size="2" mb="4"></Dialog.Description>
-        <Flex direction="column" gap="3">
-          <TextField.Input
-            placeholder="Name"
-            value={detail?.name || ''}
-            readOnly
-          />
-          <TextArea
-            placeholder="Prompt"
-            rows={7}
-            value={detail?.prompt || "You are OrionAI's chatbot called Juno"}
-            readOnly
-          />
-        </Flex>
-        <Flex gap="3" mt="4" justify="end">
-          <Dialog.Close>
-            <Button variant="soft" type="button" color="gray" onClick={onClosePersonaModal}>
-              Close
-            </Button>
-          </Dialog.Close>
-        </Flex>
+        <form onSubmit={formSubmit}>
+          <Flex direction="column" gap="3">
+            <TextField.Input
+              placeholder="Name"
+              {...register('name', { required: true })}
+              readOnly
+            />
+            <TextArea
+              placeholder="Prompt"
+              rows={7}
+              {...register('prompt', { required: true })}
+              readOnly
+            />
+          </Flex>
+          <Flex gap="3" mt="4" justify="end">
+            <Dialog.Close>
+              <Button variant="soft" type="button" color="gray" onClick={onClosePersonaModal}>
+                Close
+              </Button>
+            </Dialog.Close>
+          </Flex>
+        </form>
       </Dialog.Content>
     </Dialog.Root>
   )

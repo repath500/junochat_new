@@ -10,7 +10,7 @@ export const metadata = {
     default: 'JunoChat',
     template: `%s - JunChat`
   },
-  description: 'AI assistant powered by ChatGPT',
+  description: 'AI assistant powered by Juno-3-10b-Experimental',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',

@@ -5,7 +5,7 @@ import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { Avatar, Flex, Heading, IconButton, Select, Tooltip } from '@radix-ui/themes'
 import cs from 'classnames'
 import NextLink from 'next/link'
-import { FaAdjust, FaGithub, FaMoon, FaRegSun } from 'react-icons/fa'
+import { FaAdjust, FaInfoCircle, FaMoon, FaRegSun } from 'react-icons/fa'
 import { Link } from '../Link'
 import { useTheme } from '../Themes'
 
@@ -35,7 +35,7 @@ export const Header = () => {
             radius="full"
             fallback={
               <Link href="https://loyal-role-063864.framer.app/lite">
-                <FaGithub />
+                <FaInfoCircle />
               </Link>
             }
           />

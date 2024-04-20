@@ -25,7 +25,7 @@ export const Header = () => {
       <Flex align="center" gap="3">
         <NextLink href="/">
           <Heading as="h2" size="4" style={{ maxWidth: 200 }}>
-            ChatGPT Lite
+            JunChat v1
           </Heading>
         </NextLink>
         <Flex align="center" gap="3" className="ml-auto">
@@ -34,7 +34,7 @@ export const Header = () => {
             size="2"
             radius="full"
             fallback={
-              <Link href="https://github.com/blrchen/chatgpt-lite">
+              <Link href="https://loyal-role-063864.framer.app/lite">
                 <FaGithub />
               </Link>
             }

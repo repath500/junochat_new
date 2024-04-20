@@ -7,8 +7,8 @@ import '@/styles/theme-config.css'
 
 export const metadata = {
   title: {
-    default: 'ChatGPT Lite',
-    template: `%s - ChatGPT Lite`
+    default: 'JunoChat',
+    template: `%s - JunChat`
   },
   description: 'AI assistant powered by ChatGPT',
   icons: {

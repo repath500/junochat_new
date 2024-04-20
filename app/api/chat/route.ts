@@ -53,7 +53,7 @@ const getApiConfig = () => {
     apiKey = process.env.AZURE_OPENAI_API_KEY || ''
     model = '' // Azure Open AI always ignores the model and decides based on the deployment name passed through.
   } else {
-    let apiBaseUrl = process.env.GROQ_API_BASE_URL || 'https://api.groq.com/openai/v1'
+    let apiBaseUrl = process.env.GROQ_API_BASE_URL || 'https://api.groq.com/openai/'
     if (apiBaseUrl && apiBaseUrl.endsWith('/')) {
       apiBaseUrl = apiBaseUrl.slice(0, -1)
     }

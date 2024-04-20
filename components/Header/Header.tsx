@@ -34,7 +34,7 @@ export const Header = () => {
             size="2"
             radius="full"
             fallback={
-              <Link href="https://loyal-role-063864.framer.app/lite">
+              <Link href="https://loyal-role-063864.framer.app/">
                 <FaInfoCircle />
               </Link>
             }
